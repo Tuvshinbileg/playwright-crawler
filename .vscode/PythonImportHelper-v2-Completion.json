@@ -1,0 +1,246 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "async_playwright",
+        "importPath": "playwright.async_api",
+        "description": "playwright.async_api",
+        "isExtraImport": true,
+        "detail": "playwright.async_api",
+        "documentation": {}
+    },
+    {
+        "label": "async_playwright",
+        "importPath": "playwright.async_api",
+        "description": "playwright.async_api",
+        "isExtraImport": true,
+        "detail": "playwright.async_api",
+        "documentation": {}
+    },
+    {
+        "label": "async_playwright",
+        "importPath": "playwright.async_api",
+        "description": "playwright.async_api",
+        "isExtraImport": true,
+        "detail": "playwright.async_api",
+        "documentation": {}
+    },
+    {
+        "label": "async_playwright",
+        "importPath": "playwright.async_api",
+        "description": "playwright.async_api",
+        "isExtraImport": true,
+        "detail": "playwright.async_api",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "isExtraImport": true,
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "CONCURRENCY_LIMIT",
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "isExtraImport": true,
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "INPUT_FILE",
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "isExtraImport": true,
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "OUTPUT_FILE",
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "isExtraImport": true,
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "INPUT_FILE",
+        "kind": 5,
+        "importPath": "count",
+        "description": "count",
+        "peekOfCode": "INPUT_FILE = \"output_detail_v2.json\"\n    # 1. JSON датаг унших\nprint(f\"Файлаас дата уншиж байна: {INPUT_FILE}\")\ntry:\n    with open(INPUT_FILE, \"r\", encoding=\"utf-8\") as f:\n        items = json.load(f)\nexcept FileNotFoundError:\n    print(\"Оролтын JSON файл олдсонгүй!\")\ntotal_items = len(items)\nprint(f\"Нийт {total_items} дата олдлоо.\")",
+        "detail": "count",
+        "documentation": {}
+    },
+    {
+        "label": "total_items",
+        "kind": 5,
+        "importPath": "count",
+        "description": "count",
+        "peekOfCode": "total_items = len(items)\nprint(f\"Нийт {total_items} дата олдлоо.\")",
+        "detail": "count",
+        "documentation": {}
+    },
+    {
+        "label": "BASE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "BASE = \"https://www.unegui.mn\"\nSTART_URL = BASE + \"/l-hdlh/l-hdlh-zarna/oron-suuts-zarna/\"\nMAX_CONCURRENT = 10  # 5–8 аюулгүй\n# -------------------------\n# Pagination max page авах\n# -------------------------\nasync def get_total_pages(page):\n    pages = await page.locator(\n        \"ul.number-list a.page-number\"\n    ).evaluate_all(\"els => els.map(e => e.dataset.page)\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "START_URL",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "START_URL = BASE + \"/l-hdlh/l-hdlh-zarna/oron-suuts-zarna/\"\nMAX_CONCURRENT = 10  # 5–8 аюулгүй\n# -------------------------\n# Pagination max page авах\n# -------------------------\nasync def get_total_pages(page):\n    pages = await page.locator(\n        \"ul.number-list a.page-number\"\n    ).evaluate_all(\"els => els.map(e => e.dataset.page)\")\n    page_numbers = [int(p) for p in pages if p is not None]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_CONCURRENT",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "MAX_CONCURRENT = 10  # 5–8 аюулгүй\n# -------------------------\n# Pagination max page авах\n# -------------------------\nasync def get_total_pages(page):\n    pages = await page.locator(\n        \"ul.number-list a.page-number\"\n    ).evaluate_all(\"els => els.map(e => e.dataset.page)\")\n    page_numbers = [int(p) for p in pages if p is not None]\n    return max(page_numbers)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "BASE",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "BASE = \"https://www.unegui.mn\"\n# DETAIL_URL = BASE + \"/adv/9224806_khud-zaisan/\"  # жишээ link\nDETAIL_URL = \"https://www.unegui.mn/adv/10139016_khunnu-1-r-eelzhind-117-67mkv-4-oroo/\"\nINPUT_FILE = \"unegui_data_20260221.json\"   # Унших JSON файлын нэр\nOUTPUT_FILE = \"output_detail_v2.json\"  # Хадгалах JSON файлын нэр\n# Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nCONCURRENCY_LIMIT = 10\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "DETAIL_URL",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "DETAIL_URL = \"https://www.unegui.mn/adv/10139016_khunnu-1-r-eelzhind-117-67mkv-4-oroo/\"\nINPUT_FILE = \"unegui_data_20260221.json\"   # Унших JSON файлын нэр\nOUTPUT_FILE = \"output_detail_v2.json\"  # Хадгалах JSON файлын нэр\n# Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nCONCURRENCY_LIMIT = 10\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "INPUT_FILE",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "INPUT_FILE = \"unegui_data_20260221.json\"   # Унших JSON файлын нэр\nOUTPUT_FILE = \"output_detail_v2.json\"  # Хадгалах JSON файлын нэр\n# Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nCONCURRENCY_LIMIT = 10\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "OUTPUT_FILE",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "OUTPUT_FILE = \"output_detail_v2.json\"  # Хадгалах JSON файлын нэр\n# Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nCONCURRENCY_LIMIT = 10\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",\n        \"Гараж\": \"garage\",",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "CONCURRENCY_LIMIT",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "CONCURRENCY_LIMIT = 10\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",\n        \"Гараж\": \"garage\",\n        \"Цонх\": \"window_type\",\n        \"Барилгын давхар\": \"building_floors\",",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "kind": 5,
+        "importPath": "scrab_detail",
+        "description": "scrab_detail",
+        "peekOfCode": "BATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",\n        \"Гараж\": \"garage\",\n        \"Цонх\": \"window_type\",\n        \"Барилгын давхар\": \"building_floors\",\n        \"Хаалга\": \"door_type\",",
+        "detail": "scrab_detail",
+        "documentation": {}
+    },
+    {
+        "label": "INPUT_FILE",
+        "kind": 5,
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "peekOfCode": "INPUT_FILE = \"unegui_data_20260221.json\"   # Унших JSON файлын нэр\nOUTPUT_FILE = \"output.json\" # Хадгалах JSON файлын нэр\nCONCURRENCY_LIMIT = 15      # Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    if not data:\n        return {}\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",",
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "OUTPUT_FILE",
+        "kind": 5,
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "peekOfCode": "OUTPUT_FILE = \"output.json\" # Хадгалах JSON файлын нэр\nCONCURRENCY_LIMIT = 15      # Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    if not data:\n        return {}\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",",
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "CONCURRENCY_LIMIT",
+        "kind": 5,
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "peekOfCode": "CONCURRENCY_LIMIT = 15      # Нэгэн зэрэг унших хуудасны тоо (Компьютерын хүчин чадлаас хамаарч ихэсгэж/багасгаж болно)\nBATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    if not data:\n        return {}\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",\n        \"Гараж\": \"garage\",",
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "BATCH_SIZE",
+        "kind": 5,
+        "importPath": "scrab_detail_file",
+        "description": "scrab_detail_file",
+        "peekOfCode": "BATCH_SIZE = 1000           # Хэдэн дата уншаад файлаа хадгалах вэ\nasync def convert_keys(data: dict):\n    if not data:\n        return {}\n    mapping = {\n        \"Шал\": \"floor_type\",\n        \"Тагт\": \"balcony\",\n        \"Ашиглалтанд орсон он\": \"year_commissioned\",\n        \"Гараж\": \"garage\",\n        \"Цонх\": \"window_type\",",
+        "detail": "scrab_detail_file",
+        "documentation": {}
+    },
+    {
+        "label": "BASE",
+        "kind": 5,
+        "importPath": "sync_main",
+        "description": "sync_main",
+        "peekOfCode": "BASE = \"https://www.unegui.mn\"\nSTART_URL = BASE + \"/l-hdlh/l-hdlh-zarna/oron-suuts-zarna/\"\nasync def get_total_pages(page):\n    # бүх data-page attribute авах\n    pages = await page.locator(\n        \"ul.number-list a.page-number\"\n    ).evaluate_all(\"els => els.map(e => e.dataset.page)\")\n    # None filter + int болгох\n    page_numbers = [int(p) for p in pages if p is not None]\n    return max(page_numbers)",
+        "detail": "sync_main",
+        "documentation": {}
+    },
+    {
+        "label": "START_URL",
+        "kind": 5,
+        "importPath": "sync_main",
+        "description": "sync_main",
+        "peekOfCode": "START_URL = BASE + \"/l-hdlh/l-hdlh-zarna/oron-suuts-zarna/\"\nasync def get_total_pages(page):\n    # бүх data-page attribute авах\n    pages = await page.locator(\n        \"ul.number-list a.page-number\"\n    ).evaluate_all(\"els => els.map(e => e.dataset.page)\")\n    # None filter + int болгох\n    page_numbers = [int(p) for p in pages if p is not None]\n    return max(page_numbers)\nasync def scrape_page(page):",
+        "detail": "sync_main",
+        "documentation": {}
+    }
+]
